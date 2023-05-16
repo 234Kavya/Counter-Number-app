@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        padding :5px 5px;
+        background-color: rgb(147, 177, 231);
+        color: green;
+        border: none;
+        border-radius: 20px;
+    }
+
+    .container{
+       width: 30%;
+       margin-right: 30%;
+       margin-left: 30%;
+       margin-top: 15%;
+    }
+    .counter-div{
+        background-color: aquamarine;
+        padding: 30px 30px 30px 30px;
+    }
+
+    .count{
+        color: black;
+        
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="counter-div">
+            <h1>Counter App</h1>
+            <span class="count">0</span>
+            <hr>
+            <button class="subtract">Subtract</button>
+            <button class="reset">Reset</button>
+            <button class="addition">Addition</button>
+        </div>
+    </div>
+
+    <script>
+   
+        const count = document.querySelector(".count"); 
+        const add = document.querySelector(".addition"); 
+        const resetcount = document.querySelector(".reset"); 
+        const sub = document.querySelector(".subtract"); 
+
+        add.addEventListener("click" , () =>{
+            count.innerHTML++;
+            setcolor();
+        })
+        sub.addEventListener("click" , () =>{
+            count.innerHTML--;
+            setcolor();
+        })
+        resetcount.addEventListener("click" , () =>{
+            count.innerHTML = 0;
+            setcolor();
+        })
+
+
+
+        function setcolor(){
+            if(count.innerHTML > 0){
+                count.stye.color = "pink";
+            }
+            else if(count.innerHTML < 0){
+                count.style.color = "orangered";
+            }
+            else{
+                count.style.color = "black";
+            }
+        }
+
+    </script>
+</body>
+</html>
